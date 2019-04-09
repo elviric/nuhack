@@ -35,7 +35,7 @@ Setup:
 - From your chrome browser load the App folder from extension.
 
 
-#Demo:
+# Demo:
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ZSMftZcjNpk/0.jpg)](https://youtu.be/ZSMftZcjNpk)
  
 
