@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src='./main.js'></script>
+    <style>
+    html{width: 310px;}
+
+    header{  font-size: 22px;}
+
+    </style>
+  </head>
+  <body>
+    <header class="justify-content-center align-middle text-center border-bottom border-primary ">
+      <img width="25" height="25" src="icon-96.png">cypher</header>
+    <!-- Network Status and Settings -->
+    <div class="container  p-1 border-bottom border-primary">
+      <div class="row justify-content-center align-items-center text-center text-primary">
+        <div id="avk" class="col dock"><a href="#" class="badge border border-primary">avk</a></div>
+        <div id="bvk" class="col dock"><a href="#"class="badge border border-primary">bvk</a></div>
+        <div id="bek" class="col dock"><a href="#"class="badge border border-primary">bek</a></div>
+        <div id="pek" class="col dock"><a href="#"class="badge border border-primary">pek</a></div>
+      </div>
+
+    </div>
+    <!-- info Bar -->
+    <div id="infoBar" class="input-group border" hidden>
+      <div class="input-group-prepend" hidden>
+        <button id="infoBarIcon" class="btn p-0" type="button">&#128203;
+          &#8505;
+        </button>
+      </div>
+      <input id="infoBarTxt" type="text" class="form-control text-center" placeholder="" aria-label="" aria-describedby="basic-addon1">
+    </div>
+    <!-- info Bar ENds >
+    <div class="m-1 p-2 d-flex d-none" -->
+      <!-- Create or Select Label>
+      <div class="card text-center" style="" hidden>
+      <div class="card-body">
+        <h5 class="card-title border-bottom">Label</h5>
+        <div class="card-text">
+          <div class="col-md-3">
+
+    <label class=" p-0" for="selectLabel">Select label:</label>
+            <select id="selectLabel" type="text">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select> </div>
+          or
+          <div class="col-md-3">
+            Create label: <input type="text"></input>
+            <a href="#" id="createLabel" class=" btn btn-primary">+</a>
+          </div>
+        </div>
+        <p id="pekResponse" class="card-text"></p>
+        <a href="#" class="btn btn-primary mt-2">Create Message ></a>
+      </div>
+    </div-->
+      <!-- Encrypt Message -->
+      <div class="card text-center" id="EM">
+      <div class="card-body">
+        <h5 class="card-title border-bottom">Encrypt Message</h5>
+        <div class="card-text">
+          <!--div class="badge text-primary">label: <span class=" border border-primary">Peerless </span></div-->
+          <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Label:</span>
+            </div>
+            <input type="text" value="Peerless" class="form-control text-center" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled>
+          </div>
+          <span id="pek_mark" class="badge"></span>
+        </div>
+
+
+
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Msg_id:</span>
+          </div>
+          <input type="text" id="message_id" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
+        </div>
+        <div>
+          <textarea class="form-control card-text" rows="3" id="en_msg" hidden></textarea>
+          <textarea class="form-control card-text" rows="3" id="raw_message" placeholder="Paste/ Enter the message to encrypt" ></textarea>
+        </div>
+        <a href="#" id="encrypt-message-button" class="btn btn-primary mt-2">Encrypt Message </a>
+        <a href="#" id="encrypt-new-message-button" class="btn btn-primary mt-2" hidden>Encrypt New Message </a>
+      </div>
+      </div>
+    <!--/div>
+    < Grant >
+    <div  class="m-1 p-2 d-flex"-->
+      <!-- Create or Select Label -->
+      <div class="card text-center" id="GA" style="" hidden>
+      <div class="card-body">
+        <h5 class="card-title border-bottom">Grant Access to Bob</h5>
+        <div class="card-text">
+          <div class="input-group input-group-sm mb-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Label:</span>
+            </div>
+            <input type="text" value="Peerless" class="form-control text-center" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled>
+          </div>
+          <span class="badge">Enter/paste Bob's details below</span>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">bvk:</span>
+            </div>
+            <input type="text" id="bobVk" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">bek:</span>
+            </div>
+            <input type="text" id="bobEk" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
+          </div>
+        </div>
+        <p id="pekResponse" class="card-text"></p>
+        <a href="#" id="grant-access" class="btn btn-primary mt-2">Grant Access </a>
+        <a href="#" id="grant-new-access" class="btn btn-primary mt-2" hidden>Grant New Access </a>
+      </div>
+      </div>
+
+
+      <!--/div>
+    </div>
+<!- Retrieve Data >
+<div  class="m-1 p-2 d-flex"-->
+
+  <!-- Decrypt Message -->
+  <div id="DM" class="card text-center" style="" hidden>
+  <div class="card-body">
+    <h5 class="card-title border-bottom">Decrypt Message</h5>
+    <div class="card-text">
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Label:</span>
+        </div>
+        <input type="text" value="Peerless" class="form-control text-center" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled>
+      </div>
+    </div>
+
+    <textarea class="form-control card-text" rows="3" id="d_message" hidden></textarea>
+    <span class="badge">Enter Alice's details</span>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">pek:</span>
+      </div>
+      <input type="text" id="poEk" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">avk:</span>
+      </div>
+      <input type="text" id="alice_vk" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
+    </div>
+    <div>
+      <textarea class="form-control card-text" rows="3" id="enc_mkit" placeholder="Paste/ Enter the message to decrypt"></textarea>
+
+    </div>
+    <a href="#" id="retrieve-data" class="btn btn-primary mt-2">Decrypt Message </a>
+    <a href="#" id="decrypt-new-message-button" class="btn btn-primary mt-2" hidden>Decrypt New Message </a>
+  </div>
+  </div>
+<!--div>
+    <!div class="container">
+    <button id='connect-button'>Connect</button>
+    <input class="col" id='input-text' type='text' />
+    <button class="col" id='send-message-button'>Send</button>
+  </div>
+
+      <button id="connect-alice">Start Alice</button>
+      <button id='encrypt-message-button'>Encrypt Message</button>
+      <button id="retrieve-data">Bob:Get message</button>
+      <button id="grant-access">Alice Grant</button>
+
+    <div id='response'></div-->
+
+    <!-- Encrypt or Decrypt -->
+    <footer class="container border-bottom border-primary p-0">
+      <nav class="nav nav-pills nav-justified m-0">
+  <a  id="E" class="col border nav-item nav-link active" href="#">Encrypt</a>
+  <a id="G"class="col border nav-item nav-link" href="#">Grant</a>
+  <a id="D"class="col border nav-item nav-link" href="#">Decrypt</a>
+</nav>
+      <!--div class="row align-middle text-center  ">
+        <div class="col p-1  border btn text-primary">
+          Encrypt</div>
+        <div id="G"class="col p-1 bg-primary border btn text-white">Grant</div>
+        <div id="D"class="col p-1 border btn text-primary">Decrypt</div>
+      </div-->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+{
+  // Extension ID: knldjmfmopnpolahpmmgbagdohdnhkik
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcBHwzDvyBQ6bDppkIs9MP4ksKqCMyXQ/A52JivHZKh4YO/9vJsT3oaYhSpDCE9RPocOEQvwsHsFReW2nUEc6OLLyoCFFxIb7KkLGsmfakkut/fFdNJYh0xOTbSN8YvLWcqph09XAY2Y/f0AL7vfO1cuCqtkMt8hFrBGWxDdf9CQIDAQAB",
+  "name": "CP0",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Securing everything.",
+  "browser_action": {
+    "default_icon": {
+      "19": "icon-96.png",
+      "38": "icon-96.png"
+    },
+    "default_title": "Nucypher",
+    "default_popup": "main.html"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+
+  "permissions": [
+    "nativeMessaging","http://127.0.0.1/*","storage"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://discordapp.com/*"
+      ],
+      "js": [
+        "contentscript.js"
+      ],
+      "run_at": "document_idle"
+    }]
+}
